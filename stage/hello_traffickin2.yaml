@@ -1,0 +1,69 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: hello-traffickin2
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ecr-secret
+  namespace: hello-traffickin2
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: ewoJImF1dGhzIjogewoJCSIxMTgwMjYxMzkxMDYuZGtyLmVjci5ldS13ZXN0LTIuYW1hem9uYXdzLmNvbSI6IHsKCQkJImF1dGgiOiAiUVZkVE9tVjVTbmRaV0d4ellqSkdhMGxxYjJsaFJWWXpVa1UxTkU1dFpFWmtSMnhRU3pObmRtSkhPSGROUlVwRFVsWm9kVkZYT1VWT1YwWnpXa1pzVW1GSE9WTmphM1I2WVRBeGEwOUlZM1pOYWtKNlZsZE9hVTB5YkRabFZtaEhVbTAwZDJSdGJIaGtiWGhQVVZWb2MxcEliRkJXVjFGNFZXeEdNMVpWWkV4VFJsSmFVekZWZG1RelVqRmpTR1JZVkVWSmQxTXpXbTFXYTFKdFUydFdiV0pyZEc5TWVYUlRWbFpyTTFvelRreGhSa3BDVlVSRk1WbFVUbWhqUldoMFVXNWtVRnBwZEhKVlJYQklVMGhrUWxwRVFtdE5WVkl3WWxaV1lWWnNhRk5XYlhSSVlVWktTbGRyUm5waFZXaEtXa1JXZUZacmN6QmhiRTV2VkRKa1JXSkVTalJaYTNkMldUQTFkRmRWZUZKalYxSTJVVlpyTW1SRmFGbFhSbXhVVkZWV2JHUkhTazFOVjNjelZIcE9SMVI2YkU5V1ZsSjNXak5vTkdGSFRsRmthemxwV1ZkbmRtRXlNVlZVTVVKclZFWmtTbEpzWkVKa2EwNUVUVmRzUzFWck1VMVZWMFY1VG0xbmVWcEViRk5STVdSRVUxaHNhMU42VGxCTlJrNTJZVEI0U0ZWNlVuSk9la0V4Vlc1V2RXRkhPVk5VYkhCNVN6TkNUMWxXWkVKVmJVNHhZa2RLTVdORE9IWlVXR3gzVFZWS1EwNUZiRE5WYWswellucFdNbFF3TlRWa2JrSkxZMVJDZFZSR1VuQmtNREZTVjBkc2MySlZhRk5XVlZKUlkwaGtkR0pxWXpKaFJrcE1XbnBWTVU5RVNreGpNbFpLVlZSc05VNHdTVEZTTTBKYVZUTkNURlV5VG14bGEyeExWVEZHV2xOR2NIUlpNazEyVFZWS1YyRlZaRkpOYmtaeVVWZG5jazR5Vm5aaE1qa3lVVzV3UzFORlRrSk9NVmt4VjJ4VmVsTkZSa05TVmtGeVpVWm5ja3N4U2s1UFNFNTFVVzVHVjFNd1JYcFRWMUpzWWxaS1lVMVlUbmRQUmtwdFlXNUtWMlZHY0V0VFJrNHpVak53VUZwdVVrTlpWbVJ5VDFaa1lWUnNiRzFOUlUxNlYwWmtObU50ZERSa01WRXpWVmhuY2xkVk1UTlhSVVkyV1cxT2QxbFVXbkpOYTJjelVrZFdVMVJVUW5GVlJFWkpXVEo0V2xKSWF6UlNSbEpYWkRGYWFHUXhXblZYYTBsM1pHNVNUMU50V201Vk1EQXhZek5DUzFwc1JsRmlWMUY2VmtaV1Frd3diR3BOV0VaTldqQTRNa3N6VGxkaGVUZ3dVV3RvV1ZOcE9VWlNXRlY2VmtWV1lXSlhSbFJaTTJSM1lubHpOVmw2U2paa2EzQXpVMjFyZVdGck1VZGtSbVF5VjBWV2JXRkhkSFpPUjFFelVXdEdVVlI2U21oUlZXaFJaVzVHYm1Sc1pIcGlXRlp4VkcxNGNsbHBkSFZoUjNodFpXMHhOR0ZWY0ZWak1VWkdWMnBPVDFKR1JuVmhWVGxRVFVkWk1tSkhWbGRTVld4SlMzcFNOR05VWkU5alJUbERUVlU0ZUdOcldtaGpWR3h2WVZWNE1XSnVTalZUTTJ0eVRraE9NR05IYkhSa1YzaFhVMVZ3TVZWWVFqWmlhVGxoWTFWS2FVd3lNVkJUTWxwdFlYazRkbFJ0VmxkYVJHaERWbXhvYUdWSGR6UmtNalZHWVVWc05tTlVhSEJSTUVreFYyNXdlRTVIVWxObGJuQk9VMnhXY1ZOR1pEVlZSMlJXWVd4d05rOUhlRUpTTVUwd1RrYzViV0l4VlhkVlJFNXNUREZDTkZOV2FGWlRNMGw0VWtkSk1tTnBPV0ZOUlZKNllXcEtWMVZWTVhwWGJYaFhVVlpWZDJNemFISk5ibWhYWTBSV2JGSXdOREJSYWxKeldrWlNSVnBFVW5waGJGRXlWVVZrYm1ScmFESk9SelZEWWpBMVQySnVZM2RVVm1SSVZrVmFSVmR0WkhCU01GcFJWa1ZrY0V0NmF6RlZNRGsyVDFoQ05GVkVhM0pWVmsxMlVXMVNhVmRJU2xaUmExb3hZa1JvVGs5WFdqTmFSWE4yWlVWa2JtTkZlSHBUTWpGdVpWVlJla3d4UmtaVVIydDJUMGRLYWxGV1pIZFhSa1pMVG01S1Qxa3djR2xUZVRsaFltcFdVRkpXVW5CT2EzUkNUbTFhVDFKdVVuUk5TR3d3WWxac00xWlhlSHBoYldONFZUTkdObUZYV1hKbGJWcG9UbWx6TTJSSVZrWlRhekZvWTBoS1VHTnNRblZsYTNoRVpHeHNNMDB5VmtkaFJrbDZZbGhPVFZOc1pIUmhWa1p4WTBSS01WVnBPVzFhVlRreVkxaHNkMXByZERKaWJWcGFVMnhCTldGcmREWlNSRTVzWTBkU2NXUklTakZTTTFwTVQxWkNjMlZ1WkhWUk1YQkZaVmRqT1ZCVFNYTkpiVkpvWkVkR2NscFlhMmxQYVVwQ1ZWVldRMUZWYUc5VWExSTJWakZhZFZkVlpEVmlSWE42WkVaV2FHSkZhRUpVYmtKMFkyMDFVbVZ0UlRGa2VsSllUa2RPU1ZkVk1WWlBSRW93V1dzMVNtUXdSa0pSVldjd1pESmFRbGRWY0V4aU1YQktZVWhhYWxSclJsSlpNR1IyVW5wb00xbHNSa3BSYTBaRlVXMDVRMW95ZEhoaFIzUndVbnBzTTAxRlNrTmtNRll6VTBka1dsTnNiRXBYYTJ4Q1ZqRldSVkZyUmtaa1ZURkRVbFZXUlZWRmNIaGhibGswVlcweFQxZHVWbGRUYTJ4dVZFaGtTbEZyVmtwUlZHUkhaR3RHY2xsVVFuQlJWMlJyVWpKNGIyUjZVbXhpVjJoUldWaEtUV1JzV2pKYWJXOTJWMVphVmxsdE5XdFNNMlJ3VFVNNE1HSXhhR3RSTWxaMVVXMDFRMVpIVGxsT2JWWkZaRVZPWVU5R1ZsZFdSM0JGVjFVMVVscEliSHBMTW14VVYwaEpNVkpzWkROUVUwbHpTVzVhYkdOdVRuQmlNalJwVDJsSmVVbHBkMmxrU0d4M1dsTkpOa2xyVWtKV1JVWm1VekJXV2tscGQybGFXR2gzWVZoS2FHUkhiSFppYVVrMlRWUlpOVTVVUVROTlZGVTFUMGd3UFE9PSIKCQl9LAoJCSJodHRwczovL2luZGV4LmRvY2tlci5pby92MS8iOiB7CgkJCSJhdXRoIjogImRtbGpkRzl5ZG1WcFoyRXlPaTEzVGtaMkszWkNVVGQyTDJ0NVl3PT0iCgkJfQoJfQp9
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-dp
+  namespace: hello-traffickin2
+  labels:
+    app: server-app
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: server-pods
+  template:
+    metadata:
+      labels:
+        app: server-pods
+    spec:
+      containers:
+      - name: hellotraffickin
+        image: 118026139106.dkr.ecr.eu-west-2.amazonaws.com/hello_traffickin:latest
+        ports:
+        - containerPort: 5000
+      imagePullSecrets:
+        - name: ecr-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: server-svc
+  namespace: hello-traffickin2
+spec :
+  selector:
+    app: server-pods
+  ports:
+    - name: web
+      port: 5000
+      targetPort: 5000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: server-ingress
+  namespace: hello-traffickin2
+spec:
+  rules:
+  - host: "server.pimp.apoloniagroup.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: server-svc
+            port:
+              number: 5000
