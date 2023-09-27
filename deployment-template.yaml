@@ -1,2 +1,3 @@
 image=build_image
 namespace=change_namespace
+subdomain=change_subdomain_here
